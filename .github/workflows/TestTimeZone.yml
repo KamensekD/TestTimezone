@@ -2,13 +2,24 @@ name: TestTimezone
 env:
   TZ: Europe/Paris            # timezone of environment
 on:
-  push:
+workflow_dispatch:
+push:
     branches:
       - master
     paths:
       - 'check_timezone'
   schedule:
-    - cron:  '30 7 * * 1,2,3,4,5'     # weekly - every monday-fridayy at 7:30 UTC = 8:30 CET
+  schedule:
+    # ┌───────────── minute (0 - 59)
+    # │ ┌───────────── hour (0 - 23)
+    # │ │ ┌───────────── day of the month (1 - 31)
+    # │ │ │ ┌───────────── month (1 - 12)
+    # │ │ │ │ ┌───────────── day of the week (0 - 6) (Sunday to Saturday;
+    # │ │ │ │ │                                   7 is also Sunday on some systems)
+    # │ │ │ │ │
+    # │ │ │ │ │
+    # * * * * * <command to execute>
+    #- cron:  '30 7 * * 1,2,3,4,5'     # weekly - every monday-fridayy at 7:30 UTC = 8:30 CET
     #- cron:  '55 5 * * 5'    # weekly - every friday at 5:55 UTC
 jobs:
   my_job:
