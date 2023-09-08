@@ -10,6 +10,7 @@ on:
         default: 'warning'
       tags:
         description: 'Test scenario tags'
+        default: 'test tags'
 #  push:
 #    branches:
 #      - master
@@ -36,5 +37,5 @@ jobs:
       - run: |
           echo "Current time zone: $(date +%Z)"
           echo "Current date: $(date)"
-          echo "Log level: ${{ github.event.inputs.logLevel }}"
-          echo "Tags: ${{ github.event.inputs.tags.description }}" 
+          echo "LogLevel: ${{ github.event.inputs.logLevel }}"
+          echo "Tags:     ${{ github.event.inputs.tags }}" 
