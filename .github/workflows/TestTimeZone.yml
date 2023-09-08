@@ -2,13 +2,12 @@ name: TestTimezone
 env:
   TZ: Europe/Paris            # timezone of environment
 on:
-workflow_dispatch:
-push:
+  workflow_dispatch:
+  push:
     branches:
       - master
     paths:
       - 'check_timezone'
-  schedule:
   schedule:
     # ┌───────────── minute (0 - 59)
     # │ ┌───────────── hour (0 - 23)
