@@ -35,9 +35,9 @@ jobs:
     steps:
  #     - uses: actions/checkout@v3
  #     - name: Check timezone
- #       run: |
- #         echo "Current time zone: $(date +%Z)"
- #         echo "Current date: $(date)"
- #         echo "Log level: ${{ github.event.inputs.logLevel }}"
- #         echo "Tags: ${{ github.event.inputs.tags }}" 
-      - run: bats -v
+       - run: |
+          echo "Current time zone: $(date +%Z)"
+          echo "Current date: $(date)"
+          echo "Log level: ${{ github.event.inputs.logLevel }}"
+          echo "Tags: ${{ github.event.inputs.tags }}" 
+#      - run: bats -v
