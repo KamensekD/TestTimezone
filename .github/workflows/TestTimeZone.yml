@@ -3,7 +3,7 @@ env:
   TZ: Europe/Paris            # timezone of environment
 on:
   workflow_dispatch:
-      inputs:
+    inputs:
       logLevel:
         description: 'Log level'     
         default: 'warning'
