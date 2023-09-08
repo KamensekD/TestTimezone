@@ -25,15 +25,15 @@ on:
     # │ │ │ │ │
     # │ │ │ │ │
     # * * * * * <command to execute>
-    #- cron:  '30 7 * * 1,2,3,4,5'      # weekly - every monday-fridayy at 7:30 UTC = 8:30 CET
-    #- cron:  '55 5 * * 5'              # weekly - every friday at 5:55 UTC
-#     - cron:  '* * * * *'               # every minute
+#    - cron:  '30 7 * * 1,2,3,4,5'      # weekly - every monday-fridayy at 7:30 UTC = 8:30 CET
+#    - cron:  '55 5 * * 5'              # weekly - every friday at 5:55 UTC
+#    - cron:  '* * * * *'               # every minute
 
 jobs:
-  job_check_timezone:
+  my_job_check_timezone:
     runs-on: ubuntu-latest
     steps:
-      - name: Check timezone
+#      - name: Check timezone
       - run: |
           echo "Current time zone: $(date +%Z)"
           echo "Current date: $(date)"
