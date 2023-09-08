@@ -6,6 +6,7 @@ on:
     inputs:
       logLevel:
         description: 'Log level'     
+        required: true
         default: 'warning'
       tags:
         description: 'Test scenario tags'
@@ -36,4 +37,4 @@ jobs:
           echo "Current time zone: $(date +%Z)"
           echo "Current date: $(date)"
           echo "Log level: ${{ github.event.inputs.logLevel }}"
-          echo "Tags: ${{ github.event.inputs.tags }}" 
+          echo "Tags: ${{ github.event.inputs.tags.description }}" 
